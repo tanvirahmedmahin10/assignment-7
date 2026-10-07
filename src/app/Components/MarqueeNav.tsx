@@ -1,6 +1,7 @@
 import {Triangle } from 'lucide-react';
 import React from 'react';
 import MarqueeText from 'react-marquee-text';
+import DataFetching from './DataFetching';
 export interface IMarq {
   id: number
   slug: string
@@ -30,13 +31,13 @@ export interface Market {
   max: number
 }
 const MarqueeNav = async() => {
-    const res=await fetch('https://api.abcz.workers.dev/api/bazardor/products')
-    const data=await res.json()
+    
+    const data=await DataFetching()
     const selected=data.filter((sel:IMarq)=>(sel.change.pct)!==0)
     console.log(selected);
     
     return (
-        <div  >
+        
             <MarqueeText duration={10} direction="right">
   {selected.map((marq: IMarq) => (
     <div key={marq.id} className="inline-flex items-center mx-4 gap-2">
@@ -53,7 +54,7 @@ const MarqueeNav = async() => {
     </div>
   ))}
 </MarqueeText>
-        </div>
+        
     );
 };
 
