@@ -38,7 +38,11 @@ const MarqueeNav = async() => {
     
     return (
         
-            <MarqueeText duration={10} direction="right">
+            <MarqueeText
+             duration={10}
+             pauseOnHover={true}
+              direction="right"
+              >
   {selected.map((marq: IMarq) => (
     <div key={marq.id} className="inline-flex items-center mx-4 gap-2">
       <span>

@@ -20,8 +20,8 @@ const Navbar =async() => {
     dateStyle: "full",
   });
     return (
-       <div className="my-3">
-    <div className="max-w-7xl mx-auto flex justify-between">
+       <div className="bg-white">
+    <div className="my-3 max-w-7xl mx-auto flex justify-between">
        
 
            
