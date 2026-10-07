@@ -10,11 +10,10 @@ interface ICat{
 import logo from '@/Assests/logo-icon.png'
 import Link from 'next/link';
 import MarqueeNav from './MarqueeNav';
+import FormattedDate from './FormatData';
 
 const Navbar =async() => {
-    const datenow=new Date().toLocaleString("bn-BD",{
-        dateStyle:"full"
-    })
+
     const res=await fetch('https://api.abcz.workers.dev/api/bazardor/categories')
     const data=await res.json()
     
@@ -36,7 +35,7 @@ const Navbar =async() => {
 
                 <div>
                     <h2 className="text-2xl font-bold">বাজার দর</h2>
-                    <h3>{datenow}</h3>
+                    <FormattedDate></FormattedDate>
                 </div>
             </div>
 
