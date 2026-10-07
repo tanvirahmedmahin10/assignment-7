@@ -30,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Navbar />
         </Suspense>
        
-        <main className=" max-w-7xl mx-auto">{children}</main>
+        <main>{children}</main>
         
         </body>
     </html>

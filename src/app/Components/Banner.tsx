@@ -4,7 +4,7 @@ import logo from '@/Assests/bazar-hero.png'
 import Image from 'next/image';
 const Banner = () => {
     return (
-       <div className="my-10 pb-20 flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+       <div className="max-w-7xl mx-auto my-10 pb-20 flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
  
   <div className="flex-1 text-center md:text-left space-y-7">
     <div className="inline-block text-sm text-green-800 dark:text-gray-400 font-medium p-2 rounded-2xl  bg-green-200">
