@@ -12,8 +12,13 @@ const AllCards = async() => {
 };
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        
+        <div>
+            <p className='mx-4 my-4'>মোট {data2.length.toLocaleString('bn-BD')}টি পণ্য দেখানো হচ্ছে</p>
+            <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+            
   {data2.map((inc: IMarq) => {
+    
     const isNegative = inc.change.pct < 0; 
     const isZero = inc.change.pct === 0;
 
@@ -40,7 +45,7 @@ const AllCards = async() => {
           <div>
             <span className="text-xs text-gray-400 block mb-0.5">আজকের দাম</span>
             <div className="text-xl font-bold text-gray-900">
-              {inc.today.toLocaleString()} <span className="text-sm font-normal text-gray-500">টাকা</span>
+              {inc.today.toLocaleString('bn-BD')} <span className="text-sm font-normal text-gray-500">টাকা</span>
             </div>
           </div>
 
@@ -63,12 +68,13 @@ const AllCards = async() => {
     />
   )}
 
-  <span>{Math.abs(inc.change.pct)}%</span>
+  <span>{Math.abs(inc.change.pct).toLocaleString('bn-BD')}%</span>
 </div>
         </div>
       </div>
     );
   })}
+</div>
 </div>
     );
 };

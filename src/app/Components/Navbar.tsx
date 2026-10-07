@@ -27,7 +27,7 @@ const Navbar =async() => {
 
            
             <div className="flex items-center gap-2">
-                <div className="w-[60px] h-[60px] bg-green-700 rounded-2xl flex items-center justify-center">
+                <div className="w-[60px] h-[60px] bg-green-600 rounded-2xl flex items-center justify-center">
                     <Image
                         src={logo}
                         alt="logo-icon"
@@ -44,15 +44,15 @@ const Navbar =async() => {
             </div>
 
             <div className="ml-auto flex items-center gap-3">
-                <button className="btn btn-soft">সাইন ইন</button>
+                <button className="rounded py-2 px-4 text-black">সাইন ইন</button>
                 
-                <button className="btn btn-success">সাইন আপ</button>
+                <button className="bg-green-700 rounded py-2 px-4 text-white">সাইন আপ</button>
             </div>
 
         
     </div>
-    <div className='bg-gray-50'>
-    <div className="my-6 max-w-7xl  mx-auto flex items-center gap-3 overflow-x-auto lg:flex-wrap py-2 scrollbar">
+    <div className='border border-gray-100'>
+    <div className="max-w-7xl  mx-auto flex items-center gap-3 overflow-x-auto lg:flex-wrap py-2 scrollbar">
   {data.map((cat: ICat) => (
     <Link
       href={cat.slug}
@@ -65,7 +65,7 @@ const Navbar =async() => {
   ))}
 </div>
 </div>
-<div className='bg-gray-50 p-2'><MarqueeNav></MarqueeNav></div>
+<div className='border border-gray-100 p-3'><MarqueeNav></MarqueeNav></div>
      
 </div>
     );
