@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { IMarq } from '../MarqueeNav';
 import { ChevronDown, ChevronUp, Triangle } from 'lucide-react';
+import Link from 'next/link';
 
 interface ProductListProps {
   data2: IMarq[];
@@ -56,6 +57,7 @@ const sorted=(sortData:IMarq[])=>{
   </div>
   
 </div>
+
             <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
             
   {perfectlySorted.map((inc: IMarq) => {
@@ -63,8 +65,8 @@ const sorted=(sortData:IMarq[])=>{
     const isNegative = inc.change.pct < 0; 
     const isZero = inc.change.pct === 0;
     return (
+      <Link href={`/products/${inc.id}`} key={inc.id}>
       <div 
-        key={inc.id} 
         className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between gap-4"
       >
         
@@ -112,6 +114,7 @@ const sorted=(sortData:IMarq[])=>{
 </div>
         </div>
       </div>
+      </Link>
     );
   })}
 </div>

@@ -1,15 +1,46 @@
-import React from 'react';
+import PorductRelated from '@/app/Components/PorductRelated';
+import React, { Suspense, use } from 'react';
 
-const page = async({ params }: {  params: { productId: string }}) => {
-     const { productId } =await params
-    const res=await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productId}`)
-    const data=await res.json()
-    console.log(data);
-    return (
-        <div>
-            <h2>ki je portasi</h2>
-        </div>
-    );
+export interface IProduct {
+  id: number;
+  slug: string;
+  nameBn: string;
+  category: string;
+  categoryNameBn: string;
+  categoryIcon: string;
+  unit: string;
+  image: string;
+  today: number;
+  yesterday: number;
+  lastWeek: number;
+  lastMonth: number;
+  change: Change;
+  markets: Market[];
+}
+
+export interface Change {
+  dir: string;
+  pct: number;
+}
+
+export interface Market {
+  market: string;
+  division: string;
+  min: number;
+  max: number;
+}
+
+function ProductContent({ params }: { params: Promise<{ productId: string }> }) {
+  const { productId } = use(params);
+  return <PorductRelated productId={productId} />;
+}
+
+const page = ({ params }: { params: Promise<{ productId: string }> }) => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProductContent params={params} />
+    </Suspense>
+  );
 };
 
 export default page;

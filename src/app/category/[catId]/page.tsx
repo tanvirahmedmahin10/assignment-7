@@ -2,6 +2,7 @@ import AllCards from '@/app/Components/Cards/AllCards';
 import DifferentCards from '@/app/Components/Cards/DifferentCards';
 import { IMarq } from '@/app/Components/MarqueeNav';
 import { ca } from 'date-fns/locale';
+import Link from 'next/link';
 import React from 'react';
 export const instant = false
 const page = async({ params }: {  params: { catId: string }}) => {
@@ -26,7 +27,7 @@ const page = async({ params }: {  params: { catId: string }}) => {
             <div>মোট {data.length.toLocaleString('bn-BD')} পণ্য দেখানো হচ্ছে</div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
             {
-                data.map((cat:IMarq)=><DifferentCards key={cat.id} cat={cat}></DifferentCards>)
+                data.map((cat:IMarq)=><Link href={`/products/${cat.id}`} key={cat.id}><DifferentCards cat={cat}></DifferentCards></Link>)
             }
         </div>
         </div>
