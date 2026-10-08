@@ -2,6 +2,7 @@ import React from 'react';
 import DataFetching from '../DataFetching';
 import { IMarq } from '../MarqueeNav';
 import { Triangle } from 'lucide-react';
+import Link from 'next/link';
 
 const IncreaseCard = async () => {
     const data2 = await DataFetching()
@@ -16,8 +17,8 @@ const IncreaseCard = async () => {
     return (
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
     {sorting.slice(0,6).map((inc: IMarq) => 
-        <div
-          key={inc.id}
+        <Link href={`/products/${inc.id}`} key={inc.id}><div
+          
           className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between gap-4"
         >
         
@@ -50,6 +51,7 @@ const IncreaseCard = async () => {
             </div>
           </div>
         </div>
+        </Link>
      )}
   </div>
 );

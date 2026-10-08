@@ -20,9 +20,11 @@ const Banner = () => {
     </p>
 
     <div className="pt-2">
-      <button className="w-full sm:w-auto px-6 py-2.5 bg-green-600 hover:bg-green-700 active:scale-95 text-white font-semibold rounded-lg shadow-md transition-all duration-200">
+      <a href="#সব-পণ্য">
+      <button className="#সব-পণ্য w-full sm:w-auto px-6 py-2.5 bg-green-600 hover:bg-green-700 active:scale-95 text-white font-semibold rounded-lg shadow-md transition-all duration-200">
         সব পণ্য দেখুন
       </button>
+      </a>
     </div>
   </div>
 
