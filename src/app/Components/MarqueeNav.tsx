@@ -34,11 +34,11 @@ const MarqueeNav = async() => {
     
     const data=await DataFetching()
     const selected=data.filter((sel:IMarq)=>(sel.change.pct)!==0)
-    console.log(selected);
     const unitBangla: Record<string, string> = {
   kg: "কেজি",
   litre: "লিটার",
   piece: "পিস",
+  dozen: "ডজন "
 };
     
     return (
@@ -53,7 +53,7 @@ const MarqueeNav = async() => {
       <span>
         {marq.image} {marq.nameBn}
       </span>
-      <span>{marq.today} টাকা/{unitBangla[marq.unit] || marq.unit}</span>
+      <span>{marq.today.toLocaleString('bn-BD')} টাকা/{unitBangla[marq.unit] || marq.unit}</span>
       {marq.change.pct > 0 ? (
         <Triangle className="w-3.5 h-3.5 fill-red-600 text-red-600" />
       ) : (
