@@ -110,7 +110,7 @@ const sorted=(sortData:IMarq[])=>{
     />
   )}
 
-  <span>{Math.abs(inc.change.pct).toLocaleString('bn-BD')}%</span>
+  <span>{isZero ? '— ' : ''}{Math.abs(inc.change.pct).toLocaleString('bn-BD')}%</span>
 </div>
         </div>
       </div>
