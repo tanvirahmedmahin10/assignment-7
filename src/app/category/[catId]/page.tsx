@@ -1,8 +1,6 @@
-import AllCards from '@/app/Components/Cards/AllCards';
-import DifferentCards from '@/app/Components/Cards/DifferentCards';
-import { IMarq } from '@/app/Components/MarqueeNav';
-import { ca } from 'date-fns/locale';
-import Link from 'next/link';
+
+import CategoryBody from '@/app/Components/CategoryBody/CategoryBody';
+
 import React from 'react';
 export const instant = false
 const page = async({ params }: {  params: { catId: string }}) => {
@@ -12,7 +10,6 @@ const page = async({ params }: {  params: { catId: string }}) => {
      
      const res2=await fetch(`https://api.abcz.workers.dev/api/bazardor/categories/${catId}`)
      const data2=await res2.json()
-     console.log(data2);
     return (
         <div className='max-w-7xl mx-auto'>
             
@@ -24,12 +21,7 @@ const page = async({ params }: {  params: { catId: string }}) => {
                 </div>
                 </div>
         
-            <div>মোট {data.length.toLocaleString('bn-BD')} পণ্য দেখানো হচ্ছে</div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
-            {
-                data.map((cat:IMarq)=><Link href={`/products/${cat.id}`} key={cat.id}><DifferentCards cat={cat}></DifferentCards></Link>)
-            }
-        </div>
+            <CategoryBody data={data}></CategoryBody>
         </div>
     );
 };
