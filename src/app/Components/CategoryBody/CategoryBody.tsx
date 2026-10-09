@@ -7,12 +7,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const CategoryBody = ({data}:{data:IMarq[]}) => {
       const [isOpen, setIsOpen] = useState(false);
-      const unitBangla: Record<string, string> = {
-      kg: "কেজি",
-      litre: "লিটার",
-      piece: "পিস",
-      dozen: "ডজন "
-    };
+     
     const [isSort,setIsSort]=useState<'ডিফল্ট' | 'দাম: কম থেকে বেশি' | 'দাম: বেশি থেকে কম'>('ডিফল্ট')
     const sorted=(sortData:IMarq[])=>{
             const sortinfo=[...sortData]
@@ -27,7 +22,7 @@ const CategoryBody = ({data}:{data:IMarq[]}) => {
            const perfectlySorted=sorted(data)
     return (
         <div>
-        <div className='flex justify-between'>
+        <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2'>
              <div>মোট {data.length.toLocaleString('bn-BD')} পণ্য দেখানো হচ্ছে</div>
                <div className='flex items-center'>সাজান
       <div className="mx-4 relative flex items-center">

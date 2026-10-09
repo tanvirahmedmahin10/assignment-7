@@ -1,8 +1,12 @@
 import React from 'react';
 import { IProduct } from '../products/[productId]/page';
+import { notFound } from 'next/navigation';
 
 const PorductRelated = async({productId}:{productId:string}) => {
         const res=await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productId}`)
+        if (!res.ok) {
+            notFound();
+          }
         const data:IProduct=await res.json()
         const markets = data.markets
     
@@ -39,8 +43,8 @@ const PorductRelated = async({productId}:{productId:string}) => {
               <span className="text-xs text-gray-500 block mb-1">আজকের দাম</span>
               <span className="text-3xl font-extrabold text-black">{avgPrice}</span>
               <span className="text-xs text-gray-600 block mt-0.5">টাকা / {data.unit.replace('প্রতি ', '')}</span>
-              <div  className={data.change.dir === 'down' ?'text-xs text-green-600 font-medium flex items-center justify-center gap-1 mt-1':'text-xs text-red-600 font-medium flex items-center justify-center gap-1 mt-1'}>
-                <span>{data.change.dir === 'down' ? '▼' : '▲'}</span> {Math.abs(data.change.pct)}%
+              <div  className={data.change.pct === 0 ?' text-gray-500':data.change.dir === 'down' ?'text-xs text-green-600 font-medium flex items-center justify-center gap-1 mt-1':'text-xs text-red-600 font-medium flex items-center justify-center gap-1 mt-1'}>
+                <span>{data.change.pct === 0 ? '—': data.change.dir === 'down' ? '▼': '▲'}</span> {Math.abs(data.change.pct)}%
               </div>
             </div>
           </div>

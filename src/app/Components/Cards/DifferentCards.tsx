@@ -57,7 +57,7 @@ const DifferentCards = ({cat}:{cat:IMarq}) => {
     />
   )}
 
-  <span>{Math.abs(cat.change.pct).toLocaleString('bn-BD')}%</span>
+  <span>{isZero ? '— ' : ''}{Math.abs(cat.change.pct).toLocaleString('bn-BD')}%</span>
 </div>
         </div>
       </div>

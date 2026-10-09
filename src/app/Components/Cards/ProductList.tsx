@@ -33,8 +33,8 @@ const sorted=(sortData:IMarq[])=>{
     return (
         
         <div>
-            <div className='flex justify-between'>
-            <p className='mx-4 my-4'>মোট {data2.length.toLocaleString('bn-BD')}টি পণ্য দেখানো হচ্ছে</p>
+            <div className='flex flex-col sm:flex-row mx-4 sm:justify-between sm:items-center'>
+            <p className='my-4'>মোট {data2.length.toLocaleString('bn-BD')}টি পণ্য দেখানো হচ্ছে</p>
             <div className='flex items-center'>সাজান
       <div className="mx-4 relative flex items-center">
     <select
