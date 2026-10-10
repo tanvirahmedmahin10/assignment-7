@@ -33,8 +33,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </Suspense>
        
         <main className="flex-1">{children}</main>
-        <Footer></Footer>
         <ToastProvider placement="top" />
+        <Footer></Footer>
+        
         </body>
     </html>
   );
