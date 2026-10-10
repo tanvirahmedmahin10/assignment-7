@@ -36,7 +36,7 @@ if(resData){
     <div>
         <div className='text-center my-10'>
          <h2 className='text-2xl font-bold'>আমার প্রোফাইল</h2>
-            <p>আপনার অ্যাকাউন্টের তথ্য এখানে পরিবর্তন করার।</p>
+            <p>আপনার অ্যাকাউন্টের তথ্য এখানে পরিবর্তন করুন।</p>
   </div>
     <Form className="w-full mx-auto max-w-96 bg-white p-6 rounded-2xl border-gray-200" onSubmit={onSubmit}>
       <Fieldset>
