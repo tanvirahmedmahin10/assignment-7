@@ -33,11 +33,11 @@ export default function Basic() {
 });
 
 if(resData){
-    toast.success('Sign Up Successfully')
+    toast.success('সফলভাবে সাইন আপ করা হয়েছে!')
     router.push('/sign-in')
 }
 if(error){
-  toast.error('Sign Up Failed')
+  toast.error('সাইন আপ ব্যর্থ হয়েছে!')
 }
 
   };
@@ -71,12 +71,12 @@ if(error){
             }}
           >
             <Label>নাম</Label>
-            <Input placeholder="John Doe" />
+            <Input placeholder="মোঃ রহিম" />
             <FieldError />
           </TextField>
           <TextField isRequired name="email" type="email">
             <Label>ইমেইল</Label>
-            <Input placeholder="john@example.com" />
+            <Input placeholder="rahim@example.com" />
             <FieldError />
           </TextField>
            <TextField
@@ -98,7 +98,7 @@ if(error){
         }}
       >
         <Label>পাসওয়ার্ড</Label>
-        <Input placeholder="Enter your password" />
+        <Input placeholder="আপনার পাসওয়ার্ড দিন" />
         <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
         <FieldError />
       </TextField>

@@ -28,10 +28,10 @@ export default function Basic() {
     name:data.name
 })
 if(resData){
-       toast.success('Name Changed')
+       toast.success('নাম পরিবর্তন করা হয়েছে!')
    }
    if(error){
-     toast.error('Changed failed')
+     toast.error('পরিবর্তন ব্যর্থ হয়েছে!')
    }
 
 
@@ -42,7 +42,7 @@ if(resData){
   
   
   await signOut({ disableRedirect:true })
- toast.error('Signing Out')
+ toast.error('সফলভাবে সাইন আউট করা হয়েছে!')
   router.push('/sign-in') 
   router.refresh()
 }
@@ -106,7 +106,7 @@ if(resData){
             }}
           >
             <Label>Name</Label>
-            <Input placeholder="John Doe" />
+            <Input placeholder="আপনার নাম" />
             <FieldError />
           </TextField>
         

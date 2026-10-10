@@ -61,10 +61,10 @@ const [isOpen, setIsOpen] = useState(false);
         <button
           className="w-full text-left bg-green-700 hover:bg-green-800 rounded py-2 px-4 text-white font-medium cursor-pointer transition-colors"
           onClick={() => {
-            toast.error('Signing Out')
+            toast.error('সফলভাবে সাইন আউট করা হয়েছে!')
             signOut()}}
         >
-          Sign Out
+          সাইন আউট করুন
         </button>
       </div>
     </div>

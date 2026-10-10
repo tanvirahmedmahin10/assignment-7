@@ -31,11 +31,11 @@ export default function Basic() {
     });
 
    if(resData){
-       toast.success('Sign in Successfully')
+       toast.success('সফলভাবে সাইন ইন করা হয়েছে!')
        router.replace('/')
    }
    if(error){
-     toast.error('Sign in Failed')
+     toast.error('সাইন ইন ব্যর্থ হয়েছে!')
    }
    
   };
@@ -60,7 +60,7 @@ export default function Basic() {
         <FieldGroup>
           <TextField isRequired name="email" type="email">
             <Label>ইমেইল</Label>
-            <Input placeholder="john@example.com" />
+            <Input placeholder="rahim@example.com" />
             <FieldError />
           </TextField>
            <TextField
@@ -82,7 +82,7 @@ export default function Basic() {
         }}
       >
         <Label>পাসওয়ার্ড</Label>
-        <Input placeholder="Enter your password" />
+        <Input placeholder="আপনার পাসওয়ার্ড দিন" />
         <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
         <FieldError />
       </TextField>
