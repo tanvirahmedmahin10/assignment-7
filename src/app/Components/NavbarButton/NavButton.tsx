@@ -7,12 +7,20 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
+import { Spinner } from '@heroui/react';
 
 
 
 const NavButton = () => {
-    const { data: session } = useSession()
+    const { data: session,isPending } = useSession()
 const [isOpen, setIsOpen] = useState(false);
+  if(isPending){
+        return(
+         <div className="flex flex-col items-center gap-2">
+        <Spinner size="xl" />
+      </div>
+        )
+    }
      
     const auth =<>
        { session?.user?

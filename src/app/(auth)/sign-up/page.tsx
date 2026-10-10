@@ -19,6 +19,7 @@ import toast from "react-hot-toast";
 
 export default function Basic() {
     const router=useRouter()
+    
   const onSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
