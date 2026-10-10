@@ -36,7 +36,7 @@ const [isOpen, setIsOpen] = useState(false);
     src={logo}
     alt={session?.user?.name || "User Profile"}
   />
-<h2 className="w-8 rounded-full bg-primary text-primary-content sm:w-9">
+<h2 className="hidden lg:block">
   {session?.user?.name}
 </h2>
   <ChevronDown
