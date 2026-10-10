@@ -15,8 +15,10 @@ import {
 import Link from "next/link";
 import logo from '@/Assests/Google.png'
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Basic() {
+  const router=useRouter()
   const onSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -25,11 +27,12 @@ export default function Basic() {
     const { data:resData, error } = await signIn.email({
         email: data.email, 
         password: data.password, 
-        callbackURL: "/"
+        
     });
 
    if(resData){
        toast.success('Sign in Successfully')
+       router.replace('/')
    }
    if(error){
      toast.danger('Sign in Failed or Sign Up')
@@ -37,14 +40,14 @@ export default function Basic() {
    
   };
   const onHandleClick=async()=>{
-    const {data,error}=await signIn.social({
+    const resData=await signIn.social({
     provider: "google",
     callbackURL:'/'
   });
-  if(data){
+  if(resData){
        toast.success('Sign in Successfully')
    }
-   if(error){
+   if(!resData){
      toast.danger('Sign in Failed')
    }
    }
