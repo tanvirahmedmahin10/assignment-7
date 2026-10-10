@@ -42,7 +42,7 @@ if(resData){
   
   
   await signOut({ disableRedirect:true })
- toast.error('সফলভাবে সাইন আউট করা হয়েছে!')
+ toast.success('সফলভাবে সাইন আউট করা হয়েছে!')
   router.push('/sign-in') 
   router.refresh()
 }
