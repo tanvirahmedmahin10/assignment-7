@@ -1,5 +1,6 @@
 import PorductRelated from '@/app/Components/PorductRelated';
 import React, { Suspense, use } from 'react';
+import PageLoading from './loading';
 
 export interface IProduct {
   id: number;
@@ -37,7 +38,7 @@ function ProductContent({ params }: { params: Promise<{ productId: string }> }) 
 
 const page = ({ params }: { params: Promise<{ productId: string }> }) => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<PageLoading></PageLoading>}>
       <ProductContent params={params} />
     </Suspense>
   );

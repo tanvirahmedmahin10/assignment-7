@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import { Suspense } from "react";
 import { ToastProvider } from "@heroui/react";
 import Footer from "./Components/Footer";
+import PageLoading from "./loading";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#F0FDF4]">
-        <Suspense fallback={<nav className="h-16 bg-gray-100" />}>
+        <Suspense fallback={<PageLoading></PageLoading>}>
           <Navbar />
         </Suspense>
        

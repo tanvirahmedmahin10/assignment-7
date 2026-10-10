@@ -1,6 +1,7 @@
 import { Triangle } from 'lucide-react';
 import React, { Suspense } from 'react';
 import DecreaseCard from '../Cards/DecreaseCard';
+import PageLoading from '@/app/loading';
 
 const DecreasePrice = () => {
     return (
@@ -9,7 +10,7 @@ const DecreasePrice = () => {
          <Triangle className="w-3.5 h-3.5 rotate-180 fill-green-600 text-green-600"/>   
          <h2 className='font-semibold text-2xl'>আজ দাম কমেছে</h2>
          </div>
-         <Suspense fallback={<nav className="h-16 bg-gray-100" />}>
+         <Suspense fallback={<PageLoading></PageLoading>}>
          <DecreaseCard></DecreaseCard>
          </Suspense>
         
