@@ -133,7 +133,7 @@ if(data){
 <p className="w-full text-center text-sm text-gray-500 font-normal">
     অ্যাকাউন্ট আছে?{' '}
     <Link
-      href="/sign-up" >
+      href="/sign-in" >
      <button className="font-bold text-green-600 cursor-pointer"> সাইন ইন করুন</button>
     </Link>
   </p>
