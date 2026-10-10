@@ -26,7 +26,7 @@ const [isOpen, setIsOpen] = useState(false);
        { session?.user?
 
        
-<div className="relative inline-block">
+<div className="relative inline-block my-2">
   <button
   onClick={() => setIsOpen(!isOpen)}
   className="flex items-center gap-2 rounded-full focus:outline-none cursor-pointer"
@@ -36,7 +36,9 @@ const [isOpen, setIsOpen] = useState(false);
     src={logo}
     alt={session?.user?.name || "User Profile"}
   />
-
+<h2 className="w-8 rounded-full bg-primary text-primary-content sm:w-9">
+  {session?.user?.name}
+</h2>
   <ChevronDown
     size={18}
     className={`transition-transform duration-200 ${
@@ -73,7 +75,7 @@ const [isOpen, setIsOpen] = useState(false);
 
     :<div className="ml-auto flex items-center gap-3 my-2">
             <Link href='/sign-in'><button className="rounded py-2 px-4 text-black cursor-pointer">সাইন ইন</button></Link>
-            <Link href='sign-up'><button className="bg-green-700 rounded py-2 cursor-pointer px-4 text-white">
+            <Link href='/sign-up'><button className="bg-green-700 rounded py-2 cursor-pointer px-4 text-white">
                 সাইন আপ
             </button></Link>
         </div>}
