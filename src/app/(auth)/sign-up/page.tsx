@@ -41,16 +41,12 @@ if(error){
 
   };
   const onHandleClick=async()=>{
- const resData=await signIn.social({
+ await signIn.social({
     provider: "google",
     callbackURL:'/'
   });
-if(resData){
-       toast.success('Sign Up Successfully')
-   }
 
 }
-  
 
   return (
     <div>

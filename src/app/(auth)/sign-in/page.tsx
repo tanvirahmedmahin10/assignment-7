@@ -40,13 +40,10 @@ export default function Basic() {
    
   };
   const onHandleClick=async()=>{
-    const resData=await signIn.social({
+    await signIn.social({
     provider: "google",
     callbackURL:'/'
   });
-  if(resData){
-       toast.success('Sign in Successfully')
-   }
   
    }
 

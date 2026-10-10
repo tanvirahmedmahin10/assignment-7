@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
+import toast from "react-hot-toast";
 
 export async function proxy(request: NextRequest) {
   const session = await auth.api.getSession({
@@ -9,6 +10,7 @@ export async function proxy(request: NextRequest) {
 
   if (!session) {
     return NextResponse.redirect(new URL("/sign-in", request.url));
+   
   }
 
   return NextResponse.next();
