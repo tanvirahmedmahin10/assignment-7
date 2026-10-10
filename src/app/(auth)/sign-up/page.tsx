@@ -28,12 +28,12 @@ export default function Basic() {
     name: data.name, 
     email: data.email, 
     password: data.password, 
-    callbackURL: "/"
+    callbackURL: "/sign-in"
 });
 
 if(resData){
     toast.success('Sign Up Successfully')
-    router.push('/')
+    router.push('/sign-in')
 }
 if(error){
   toast.error('Sign Up Failed')
