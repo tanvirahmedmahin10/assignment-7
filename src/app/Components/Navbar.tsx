@@ -12,8 +12,8 @@ const Navbar = async () => {
 
 
   return (
-    <div className="overflow-hidden">
-    <div className="bg-white sticky top-0 z-50">
+    <div>
+    <div className="sticky top-0 z-50 bg-white ">
       <div className="my-3 max-w-7xl mx-auto flex justify-between">
         <Link href="/">
           <div className="flex items-center gap-2">
