@@ -12,7 +12,8 @@ const Navbar = async () => {
 
 
   return (
-    <div className="bg-white">
+    <div>
+    <div className="bg-white sticky top-0 z-50">
       <div className="my-3 max-w-7xl mx-auto flex justify-between">
         <Link href="/">
           <div className="flex items-center gap-2">
@@ -36,10 +37,11 @@ const Navbar = async () => {
       </div>
 
       <CategoryNav data={data} />
-
-      <div className="border border-gray-100 p-3">
+</div>
+      <div className="border bg-white border-gray-100 p-3">
         <MarqueeNav />
-      </div>
+      
+    </div>
     </div>
   );
 };
