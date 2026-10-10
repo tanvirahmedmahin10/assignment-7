@@ -5,16 +5,18 @@ import MarqueeNav from "./MarqueeNav";
 import FormattedDate from "./FormatDate";
 import CategoryFetching from "./CategoryFetching";
 import CategoryNav from "./CategoryNav"; 
+import NavButton from "./NavbarButton/NavButton";
 
 const Navbar = async () => {
   const data = await CategoryFetching();
+
 
   return (
     <div className="bg-white">
       <div className="my-3 max-w-7xl mx-auto flex justify-between">
         <Link href="/">
           <div className="flex items-center gap-2">
-            <div className="w-[60px] h-[60px] bg-green-600 rounded-2xl flex items-center justify-center">
+            <div className="w-15 h-15 bg-green-600 rounded-2xl flex items-center justify-center">
               <Image
                 src={logo}
                 alt="logo-icon"
@@ -30,12 +32,7 @@ const Navbar = async () => {
           </div>
         </Link>
 
-        <div className="ml-auto flex items-center gap-3">
-          <button className="rounded py-2 px-4 text-black">সাইন ইন</button>
-          <button className="bg-green-700 rounded py-2 px-4 text-white">
-            সাইন আপ
-          </button>
-        </div>
+        <NavButton></NavButton>
       </div>
 
       <CategoryNav data={data} />

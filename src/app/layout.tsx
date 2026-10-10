@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import { Suspense } from "react";
+import { ToastProvider } from "@heroui/react";
+import Footer from "./Components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +32,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Navbar />
         </Suspense>
        
-        <main>{children}</main>
-        
+        <main className="flex-1">{children}</main>
+        <Footer></Footer>
+        <ToastProvider placement="top" />
         </body>
     </html>
   );
