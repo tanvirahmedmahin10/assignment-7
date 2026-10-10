@@ -6,7 +6,8 @@ import logo from '@/Assests/RED_DEAD.png'
 import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
-import { toast } from '@heroui/react';
+import toast from 'react-hot-toast';
+
 
 
 const NavButton = () => {
@@ -52,7 +53,7 @@ const [isOpen, setIsOpen] = useState(false);
         <button
           className="w-full text-left bg-green-700 hover:bg-green-800 rounded py-2 px-4 text-white font-medium cursor-pointer transition-colors"
           onClick={() => {
-            toast.danger('Signing Out')
+            toast.error('Signing Out')
             signOut()}}
         >
           Sign Out

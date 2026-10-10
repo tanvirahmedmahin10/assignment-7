@@ -6,13 +6,13 @@ import React from 'react';
 export const instant = false
 const page = async({ params }: {  params: { catId: string }}) => {
      const { catId } =await params
-     const res=await fetch(`https://api.abcz.workers.dev/api/bazardor/products?category=${catId}`)
+     const res=await fetch(`https://openapi.programming-hero.com/api/bazardor/products?category=${catId}`)
      if (!res.ok) {
     notFound();
   }
      const data=await res.json()
      
-     const res2=await fetch(`https://api.abcz.workers.dev/api/bazardor/categories/${catId}`)
+     const res2=await fetch(`https://openapi.programming-hero.com/api/bazardor/categories/${catId}`)
       if (!res2.ok) {
     notFound();
   }

@@ -3,7 +3,7 @@ import { IProduct } from '../products/[productId]/page';
 import { notFound } from 'next/navigation';
 
 const PorductRelated = async({productId}:{productId:string}) => {
-        const res=await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productId}`)
+        const res=await fetch(`https://openapi.programming-hero.com/api/bazardor/products/${productId}`)
         if (!res.ok) {
             notFound();
           }

@@ -9,13 +9,13 @@ import {
   Form,
   Input,
   Label,
-  TextField,
-  toast,
+  TextField
 } from "@heroui/react";
 import Link from "next/link";
 import logo from '@/Assests/Google.png'
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function Basic() {
   const router=useRouter()
@@ -35,7 +35,7 @@ export default function Basic() {
        router.replace('/')
    }
    if(error){
-     toast.danger('Sign in Failed or Sign Up')
+     toast.error('Sign in Failed')
    }
    
   };
@@ -48,7 +48,7 @@ export default function Basic() {
        toast.success('Sign in Successfully')
    }
    if(!resData){
-     toast.danger('Sign in Failed')
+     toast.error('Sign in Failed')
    }
    }
 

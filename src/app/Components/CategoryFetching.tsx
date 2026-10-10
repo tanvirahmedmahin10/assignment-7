@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 
 const CategoryFetching = async() => {
-   const res=await fetch('https://api.abcz.workers.dev/api/bazardor/categories')
+   const res=await fetch('https://openapi.programming-hero.com/api/bazardor/categories')
     if(!res.ok){
         notFound()
       }

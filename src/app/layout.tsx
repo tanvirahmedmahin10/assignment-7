@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import { ToastProvider } from "@heroui/react";
 import Footer from "./Components/Footer";
 import PageLoading from "./loading";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </Suspense>
        
         <main className="flex-1">{children}</main>
-        <ToastProvider placement="bottom" />
+        <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
         <Footer></Footer>
         
         </body>
