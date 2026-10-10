@@ -44,7 +44,7 @@ export default function Basic() {
   if(data){
        toast.success('Sign in Successfully')
    }
-   if(!data){
+   if(error){
      toast.danger('Sign in Failed')
    }
    }
