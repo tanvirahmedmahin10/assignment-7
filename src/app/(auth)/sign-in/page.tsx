@@ -32,7 +32,7 @@ export default function Basic() {
        toast.success('Sign in Successfully')
    }
    if(error){
-     toast.danger('Sign in Failed')
+     toast.danger('Sign in Failed or Sign Up')
    }
    
   };
@@ -44,7 +44,7 @@ export default function Basic() {
   if(data){
        toast.success('Sign in Successfully')
    }
-   if(error){
+   if(!data){
      toast.danger('Sign in Failed')
    }
    }
