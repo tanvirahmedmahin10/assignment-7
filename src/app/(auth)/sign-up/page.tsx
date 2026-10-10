@@ -48,9 +48,6 @@ if(error){
 if(resData){
        toast.success('Sign Up Successfully')
    }
-   if(!resData){
-     toast.error('Sign Up Failed')
-   }
 
 }
   
