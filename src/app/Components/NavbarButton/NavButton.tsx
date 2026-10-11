@@ -67,7 +67,7 @@ const [isOpen, setIsOpen] = useState(false);
           onClick={() => {
             toast.success('সফলভাবে সাইন আউট করা হয়েছে!')
             signOut()
-          router.push('/sign-in')
+          router.push('/')
           }
           }
         >
