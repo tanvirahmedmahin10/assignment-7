@@ -32,7 +32,7 @@ export default function Basic() {
 
    if(resData){
        toast.success('সফলভাবে সাইন ইন করা হয়েছে!')
-       router.replace('/')
+       router.push('/')
    }
    if(error){
      toast.error('সাইন ইন ব্যর্থ হয়েছে!')

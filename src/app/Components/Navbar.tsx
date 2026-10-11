@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/Assests/logo-icon.png";
-import MarqueeNav from "./MarqueeNav";
 import FormattedDate from "./FormatDate";
 import CategoryFetching from "./CategoryFetching";
 import CategoryNav from "./CategoryNav"; 
@@ -12,8 +11,7 @@ const Navbar = async () => {
 
 
   return (
-    
-    <div className="bg-white">
+    <div className="sticky top-0 z-50 bg-white">
       <div className="my-3 max-w-7xl mx-auto flex justify-between">
         <Link href="/">
           <div className="flex items-center gap-2">
@@ -37,11 +35,8 @@ const Navbar = async () => {
       </div>
 
       <CategoryNav data={data} />
-
-      <div className="border border-gray-100 p-3">
-        <MarqueeNav />
-      </div>
-    </div>
+     </div>
+      
   );
 };
 

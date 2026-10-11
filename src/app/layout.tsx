@@ -3,10 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import { Suspense } from "react";
-import { ToastProvider } from "@heroui/react";
 import Footer from "./Components/Footer";
 import PageLoading from "./loading";
 import { Toaster } from "react-hot-toast";
+import MarqueeNav from "./Components/MarqueeNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +32,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-[#F0FDF4]">
         <Suspense fallback={<PageLoading></PageLoading>}>
           <Navbar />
+          <div className="bg-white border border-gray-100 p-3">
+        <MarqueeNav />
+      </div>
         </Suspense>
        
         <main className="flex-1">{children}</main>
