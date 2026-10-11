@@ -45,7 +45,7 @@ export default function Basic() {
   const onHandleClick=async()=>{
     await signIn.social({
     provider: "google",
-    callbackURL:'/'
+    callbackURL:callbackUrl
   });
   
    }
