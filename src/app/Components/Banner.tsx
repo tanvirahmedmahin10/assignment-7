@@ -33,6 +33,7 @@ const Banner = () => {
     <Image 
       src={logo} 
       alt="Banner Logo"
+      loading="eager"
       width={315}
       height={263}
       className="w-full h-auto object-contain mx-auto"

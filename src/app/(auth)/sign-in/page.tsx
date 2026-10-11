@@ -14,11 +14,14 @@ import {
 import Link from "next/link";
 import logo from '@/Assests/Google.png'
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 
 export default function Basic() {
   const router=useRouter()
+  const searchParams = useSearchParams();
+  const rawCallbackUrl = searchParams.get("callbackUrl");
+  const callbackUrl = rawCallbackUrl ? decodeURIComponent(rawCallbackUrl) : "/";
   const onSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -29,10 +32,10 @@ export default function Basic() {
         password: data.password, 
         
     });
-
+    
    if(resData){
        toast.success('সফলভাবে সাইন ইন করা হয়েছে!')
-       router.push('/')
+       window.location.href = callbackUrl;
    }
    if(error){
      toast.error('সাইন ইন ব্যর্থ হয়েছে!')

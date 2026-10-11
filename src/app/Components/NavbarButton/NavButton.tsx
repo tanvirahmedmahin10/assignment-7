@@ -8,11 +8,13 @@ import { useState } from 'react';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import { Spinner } from '@heroui/react';
+import { useRouter } from 'next/navigation';
 
 
 
 const NavButton = () => {
     const { data: session,isPending } = useSession()
+    const router=useRouter()
 const [isOpen, setIsOpen] = useState(false);
   if(isPending){
         return(
@@ -64,7 +66,10 @@ const [isOpen, setIsOpen] = useState(false);
           className="w-full text-left bg-green-700 hover:bg-green-800 rounded py-2 px-4 text-white font-medium cursor-pointer transition-colors"
           onClick={() => {
             toast.success('সফলভাবে সাইন আউট করা হয়েছে!')
-            signOut()}}
+            signOut()
+          router.push('/sign-in')
+          }
+          }
         >
           সাইন আউট করুন
         </button>
